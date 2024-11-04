@@ -1,0 +1,88 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyd
+*.so
+
+# Environment
+.env
+*.env
+.venv/
+venv/
+env/
+ENV/
+venv.bak/
+
+# Django
+*.log
+*.pot
+*.pyc
+*.mo
+*.migrations/
+
+# Django Cache
+**/cache/
+**/__pycache__/
+
+# Django Stuff:
+db.sqlite3
+*.sqlite3
+media/
+staticfiles/
+*.pid
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Testing
+.coverage
+*.cover
+*.py,cover
+.tox/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# MyPy & Pytype
+.mypy_cache/
+.pytype/
+
+# Static and media files
+/static/
+media/
+
+# Local development
+*.local_settings.py
+config/settings/local.py
+
+# Node.js
+node_modules/
+package-lock.json
+yarn.lock
+
+# PyCharm files
+*.iml
+.idea/
+
+# Ansible roles
+roles/**/.cache
+roles/**/.retry
+
+# Compiled C extensions
+*.pyd
+*.so
+*.dylib
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
