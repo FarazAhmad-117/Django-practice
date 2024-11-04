@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  {{ chai.name }} | Chai Detail Page
+{% endblock %}
+
+{% block content %}
+  <div class="w-full max-w-[1100px] mx-auto py-3 mt-7">
+    <h1 class="text-6xl font-serif text-left py-2 mb-3">{{ chai.name }}</h1>
+    <div class="w-full">
+      <img src="{{ chai.image.url }}" class="w-full h-auto mx-auto max-h-[80vh] object-cover" />
+    </div>
+    <p class="text-2xl py-2">
+      Type: <span class="font-semibold font-serif tracking-widest text-gray-400">{{ chai.get_type }}</span>
+    </p>
+    <div>{{ chai.description }}</div>
+  </div>
+{% endblock %}

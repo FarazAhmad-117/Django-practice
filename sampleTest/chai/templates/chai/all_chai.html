@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  All Chai Page
+{% endblock %}
+
+{% block content %}
+  <div class="w-full max-w-[1100px] mx-auto py-3 mt-7">
+    <h1 class="text-6xl font-serif text-left">All Chai Page</h1>
+    <div class="flex items-center py-4 mt-3 justify-center gap-5">
+      {% for chai in chais %}
+        <div class="w-full max-w-[250px] py-3 px-2 hover:scale-105 transition duration-200 ease-in cursor-pointer bg-white rounded-md">
+          <div class="h-40 w-full rounded-md overflow-hidden">
+            <img src="{{ chai.image.url }}" class="h-full w-full object-cover hover:scale-110 transition ease-linear duration-200" alt="{{ chai.name }}" />
+          </div>
+          <p class="text-black pt-2 px-3 font-semibold italic">{{ chai.get_type }}</p>
+          <div class="pb-3 text-xl text-center text-slate-900 font-mono">{{ chai.name }}</div>
+          <a href="{% url 'chai_details' chai.id %}"><button class="text-lg py-2 translate-x-0 -translate-y-1 active:translate-x-1 active:translate-y-0 transition duration-200 w-full bg-sky-600 text-white ease-in shadow-md shadow-black active:shadow-none">See Details</button></a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
