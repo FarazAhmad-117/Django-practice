@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  All Chai Stores
+{% endblock %}
+
+{% block content %}
+  <div>
+    <h1 class="text-4xl mb-2 mt-5">Fill out the form</h1>
+    <div class="text-black bg-white max-w-[500px] mx-auto py-7 px-4 flex flex-col items-center justify-center gap-2 rounded-md">
+      <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button class="w-full block max-w-[200px] mx-auto text-center my-3 py-2 bg-sky-600 text-white active:translate-x-1 active:translate-y-1 transition duration-150 ease-linear shadow-md shadow-black active:shadow-none">Search Store</button>
+      </form>
+    </div>
+    {% if stores %}
+      <div class="max-w-[800px] my-3 rounded-lg bg-slate-100 text-slate-900 py-3 px-4 mx-auto">
+        <h2 class="text-3xl font-serif mb-2 mt-5">List of All Stores:</h2>
+        <div class="my-2 p-3 flex flex-wrap gap-3">
+          {% for store in stores %}
+            <div class="p-4 bg-slate-600 text-white rounded-md shadow-md shadow-gray-700">{{ store.name }}</div>
+          {% endfor %}
+        </div>
+      </div>
+    {% else %}
+      <div class="max-w-[800px] min-h-[40vh] my-3 rounded-lg flex items-center justify-center bg-slate-100 text-slate-900 py-3 px-4 mx-auto">
+        <div class="italic text-xl text-gray-600">Sorry! No Stores were found!</div>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}
